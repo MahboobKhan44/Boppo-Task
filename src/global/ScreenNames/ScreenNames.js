@@ -1,0 +1,2 @@
+export const HOME_PAGE = 'HOME_PAGE';
+export const NEWS_DETAIL_SCREEN = 'NEWS_DETAIL_SCREEN';
