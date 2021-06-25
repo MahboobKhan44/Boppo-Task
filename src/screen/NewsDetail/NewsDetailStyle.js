@@ -74,11 +74,12 @@ export const styles = StyleSheet.create({
     fontFamily: REGULAR,
     color: WHITE
   },
-  descContiner: {
+  descContainer: {
     flex: 1,
     backgroundColor: WHITE,
     marginTop: -20,
-    borderRadius: 10
+    borderRadius: 10,
+    elevation: 5
   },
   tapCon: {
     marginTop: 20,

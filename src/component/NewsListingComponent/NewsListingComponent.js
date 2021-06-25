@@ -4,7 +4,7 @@ import { styles } from '../../screen/HomePage/HomePageStyle';
 //Third Party Liabraries
 import moment from 'moment'
 //Components
-import { NEWS_DETAIL_SCREEN } from '../../global/ScreenNames/ScreenNames';
+import { NEWS_DETAIL_SCREEN } from '../../global/screenNames';
 
 const NewsListingComponent = ({ item, navigation }) => {
 
