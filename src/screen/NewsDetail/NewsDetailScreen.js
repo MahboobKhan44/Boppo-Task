@@ -28,13 +28,13 @@ const NewsDetailScreen = ({ route: { params: { item } }, navigation }) => {
 
           <View style={styles.dateCon}>
 
-            <Text numberOfLines={3} style={styles.dateYearFormat}>
+            <Text style={styles.dateYearFormat}>
               {moment(item.publishedAt).format('MMMM Do YYYY')}
             </Text>
 
             <View style={styles.dot} />
 
-            <Text numberOfLines={3} style={styles.dateMinFormat}>
+            <Text style={styles.dateMinFormat}>
               {moment(item.publishedAt).format('h:mm A')}
             </Text>
 

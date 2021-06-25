@@ -29,12 +29,12 @@ const NewsListingComponent = ({ item, navigation }) => {
 
           <View style={{ flexDirection: 'row', marginTop: 7 }}>
 
-            <Text numberOfLines={3} style={styles.dateYearFormat}>{moment(item.publishedAt).format('MMMM Do YYYY')}</Text>
+            <Text style={styles.dateYearFormat}>{moment(item.publishedAt).format('MMMM Do YYYY')}</Text>
 
             <View
               style={styles.dot} />
 
-            <Text numberOfLines={3} style={styles.dateMinFormat}>{moment(item.publishedAt).format('h:mm A')}</Text>
+            <Text style={styles.dateMinFormat}>{moment(item.publishedAt).format('h:mm A')}</Text>
 
           </View>
 
