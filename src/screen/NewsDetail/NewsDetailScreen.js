@@ -17,7 +17,7 @@ const NewsDetailScreen = ({ route: { params: { item } } }) => {
           position: 'absolute',
           left: 0,
           top: 0,
-          opacity: 0.2,
+          opacity: 0.3,
           backgroundColor: 'black',
           width: screenWidth,
           height: screenHight
