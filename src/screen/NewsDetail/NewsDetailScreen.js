@@ -1,34 +1,70 @@
-import React from 'react'
-import { StyleSheet, Text, View, Image, StatusBar, Dimensions } from 'react-native'
+import React from 'react';
+import { StyleSheet, Text, View, Image, StatusBar, Dimensions, ImageBackground, TouchableOpacity, Linking } from 'react-native';
+import { styles } from './NewsDetailStyle';
+//SVG
+import BackIcon from '../../assets/svg/BackIcon';
+//Third Party Liabraries
+import moment from 'moment';
 
-const NewsDetailScreen = ({ route: { params: { item } } }) => {
-  const screenHight = Dimensions.get('screen').height / 2;
-  const screenWidth = Dimensions.get('screen').width;
+const NewsDetailScreen = ({ route: { params: { item } }, navigation }) => {
+
+  //navigation goBack
+  const goBack = () => navigation.goBack();
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.container}>
+
       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent={true} />
 
-      <View style={{ height: screenHight, width: screenWidth }}>
+      <View style={styles.imageCon}>
 
-        <Image source={{ uri: item.urlToImage }} style={{ height: screenHight, width: screenWidth }} resizeMode={'cover'} />
-        <View style={{
-          flex: 1,
-          position: 'absolute',
-          left: 0,
-          top: 0,
-          opacity: 0.3,
-          backgroundColor: 'black',
-          width: screenWidth,
-          height: screenHight
-        }}></View>
+        <ImageBackground source={{ uri: item.urlToImage }} style={styles.imageBackground}>
+
+          <View style={styles.overLay} />
+
+          <TouchableOpacity onPress={goBack} activeOpacity={0.8} style={styles.backSvg}>
+            <BackIcon />
+          </TouchableOpacity>
+
+          <View style={styles.dateCon}>
+
+            <Text numberOfLines={3} style={styles.dateYearFormat}>
+              {moment(item.publishedAt).format('MMMM Do YYYY')}
+            </Text>
+
+            <View style={styles.dot} />
+
+            <Text numberOfLines={3} style={styles.dateMinFormat}>
+              {moment(item.publishedAt).format('h:mm A')}
+            </Text>
+
+          </View>
+
+          <View style={styles.titleCon}>
+            <Text style={styles.fontTitle}>{item.title}</Text>
+          </View>
+
+          <View style={styles.authorCon}>
+            <Text style={styles.fontAuthor}>{item.author}</Text>
+          </View>
+
+        </ImageBackground>
+
       </View>
 
-      <View style={{ flex: 1, backgroundColor: 'white', marginTop: -20, borderRadius: 10 }}>
+      <View style={styles.descContainer}>
 
-        <View style={{ marginTop: 20 }}>
-          <Text>{item.content}</Text>
+        <TouchableOpacity
+          onPress={() => Linking.openURL(item.url)}
+          activeOpacity={0.8}
+          style={styles.tapCon}>
+          <Text style={styles.fontTapToMore}>Tap to more</Text>
+        </TouchableOpacity>
+
+        <View style={styles.description}>
+          <Text style={styles.fontDesc}>{item.description}</Text>
         </View>
+
       </View>
     </View>
   )

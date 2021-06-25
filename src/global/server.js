@@ -1,0 +1,1 @@
+export const BASE_URL = 'https://newsapi.org/v2/everything?q=tesla&from=2021-05-25&sortBy=publishedAt&apiKey=47b47c0f69364838853964a9cdea7c77';

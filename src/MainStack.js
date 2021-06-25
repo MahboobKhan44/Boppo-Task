@@ -1,13 +1,13 @@
 import React from 'react'
+//Stacks
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { HOME_PAGE, NEWS_DETAIL_SCREEN } from './global/ScreenNames/ScreenNames';
+//ScreenNames
+import { HOME_PAGE, NEWS_DETAIL_SCREEN } from './global/screenNames';
 import HomePage from './screen/HomePage/HomePage';
 import NewsDetailScreen from './screen/NewsDetail/NewsDetailScreen';
 
 const Stack = createStackNavigator();
-
-
 
 const MainStack = ({ }) => {
   return (

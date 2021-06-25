@@ -1,14 +1,19 @@
-import React from 'react'
-import { SafeAreaProvider } from 'react-native-safe-area-context'
-import MainStack from './MainStack'
+import React from 'react';
+import { Alert } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+//MainStacks
+import MainStack from './MainStack';
+//ThirdParty Libraries
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Axios from 'axios';
-import { Alert } from 'react-native';
+//APi URL
+import { BASE_URL } from './global/server';
 
 
 
 const App = () => {
 
+  //Data Save In AsyncStorage
   const storeData = async (value) => {
     try {
       const jsonValue = JSON.stringify(value)
@@ -19,11 +24,10 @@ const App = () => {
   }
 
 
-
+  //Get News Api Data
   const getNewsData = async () => {
     try {
-      const response = await Axios.get('https://newsapi.org/v2/everything?q=tesla&from=2021-05-25&sortBy=publishedAt&apiKey=47b47c0f69364838853964a9cdea7c77')
-      // console.log("response", response.data);
+      const response = await Axios.get(`${BASE_URL}`)
 
       if (response.data.articles.length != 0) {
         storeData(response.data.articles)
@@ -34,6 +38,7 @@ const App = () => {
     }
   }
 
+  //UseEffect
   React.useEffect(() => {
     getNewsData()
   }, [])
