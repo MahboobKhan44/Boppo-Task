@@ -4,7 +4,7 @@ import { BLACK, WHITE, GRAY_DARK } from '../../global/color';
 //Constant
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from '../../global/constants';
 //Fonts
-import { BOLD, SEMIBOLD, REGULAR } from '../../global/typography'
+import { BOLD, SEMIBOLD, REGULAR, LIGHT } from '../../global/typography'
 
 export const styles = StyleSheet.create({
   container: {
@@ -84,11 +84,12 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     backgroundColor: GRAY_DARK,
     height: 27,
-    width: 87,
+    width: 100,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'flex-end',
     marginRight: 20,
+
     borderRadius: 10
   },
   fontTapToMore: {
@@ -108,5 +109,9 @@ export const styles = StyleSheet.create({
     fontFamily: SEMIBOLD,
     marginBottom: 5
   },
-
+  fontContent: {
+    fontSize: 20,
+    fontFamily: LIGHT,
+    marginBottom: 5
+  },
 })

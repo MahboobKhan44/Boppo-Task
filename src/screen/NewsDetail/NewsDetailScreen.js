@@ -92,6 +92,10 @@ const NewsDetailScreen = ({ route: { params: { item } }, navigation }) => {
           <Text style={styles.fontDesc}>{item.description}</Text>
         </View>
 
+        <View style={styles.description}>
+          <Text style={styles.fontContent}>{item.content}</Text>
+        </View>
+
       </View>
     </View>
   )
