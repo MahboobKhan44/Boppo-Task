@@ -17,7 +17,6 @@ const App = () => {
   const getNewsData = async () => {
     try {
       const response = await Axios.get(`${BASE_URL}`)
-      console.log("Res ", response);
 
       if (response.data.articles.length != 0) {
         storeData(response.data.articles)
