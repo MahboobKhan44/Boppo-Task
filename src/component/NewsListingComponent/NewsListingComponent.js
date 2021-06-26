@@ -36,7 +36,7 @@ const NewsListingComponent = ({ item, navigation }) => {
             <View
               style={styles.dot} />
 
-            <Text style={styles.dateMinFormat}>{dateFormat(item.publishedAt, "h:MM TT")}</Text>
+            <Text style={styles.dateYearFormat}>{dateFormat(item.publishedAt, "h:MM TT")}</Text>
 
           </View>
 

@@ -32,7 +32,7 @@ const NewsDetailScreen = ({ route: { params: { item } }, navigation }) => {
 
       <View style={styles.imageCon}>
 
-        <ImageBackground source={{ uri: item.urlToImage }} style={styles.imageBackground}>
+        <ImageBackground source={{ uri: item.urlToImage }} style={styles.imageCon}>
 
           <View style={styles.overLay} />
 
@@ -61,7 +61,7 @@ const NewsDetailScreen = ({ route: { params: { item } }, navigation }) => {
 
             <View style={styles.dot} />
 
-            <Text style={styles.dateMinFormat}>
+            <Text style={styles.dateYearFormat}>
               {dateFormat(item.publishedAt, "h:MM TT")}
             </Text>
 

@@ -14,10 +14,6 @@ export const styles = StyleSheet.create({
     height: SCREEN_HEIGHT / 2,
     width: SCREEN_WIDTH
   },
-  imageBackground: {
-    height: SCREEN_HEIGHT / 2,
-    width: SCREEN_WIDTH
-  },
   overLay: {
     flex: 1,
     position: 'absolute',
@@ -58,11 +54,6 @@ export const styles = StyleSheet.create({
     marginTop: 9,
     marginLeft: 5,
     marginRight: 5
-  },
-  dateMinFormat: {
-    fontSize: 15,
-    fontFamily: SEMIBOLD,
-    color: WHITE
   },
   titleCon: {
     marginLeft: 20,

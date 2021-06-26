@@ -56,9 +56,4 @@ export const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5
   },
-  dateMinFormat: {
-    fontSize: 14,
-    fontFamily: SEMIBOLD,
-    color: GRAY_DARK
-  },
 })
