@@ -3,10 +3,22 @@ import { StyleSheet, Text, View, Image, StatusBar, Dimensions, ImageBackground, 
 import { styles } from './NewsDetailStyle';
 //SVG
 import BackIcon from '../../assets/svg/BackIcon';
+//VectorIcon
+import BookMark from 'react-native-vector-icons/Fontisto'
 //Third Party Liabraries
 import moment from 'moment';
+//Fonts
+import { BLACK, GRAY_DARK, WHITE } from '../../global/color';
 
 const NewsDetailScreen = ({ route: { params: { item } }, navigation }) => {
+
+  //UseState
+  const [bookMark, setBookMark] = React.useState(false);
+
+  //bookMarkToggle
+  const bookMarkToggle = () => {
+    setBookMark(!bookMark)
+  }
 
   //navigation goBack
   const goBack = () => navigation.goBack();
@@ -22,9 +34,22 @@ const NewsDetailScreen = ({ route: { params: { item } }, navigation }) => {
 
           <View style={styles.overLay} />
 
-          <TouchableOpacity onPress={goBack} activeOpacity={0.8} style={styles.backSvg}>
-            <BackIcon />
-          </TouchableOpacity>
+          <View style={styles.backArrowCon}>
+
+            <TouchableOpacity onPress={goBack} activeOpacity={0.8} style={styles.backSvg}>
+              <BackIcon />
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={bookMarkToggle} style={styles.bookMarks}>
+              <BookMark
+                name={bookMark ? "bookmark-alt" : "bookmark"}
+                size={26}
+                color={bookMark ? GRAY_DARK : WHITE}
+              />
+            </TouchableOpacity>
+
+          </View>
+
 
           <View style={styles.dateCon}>
 

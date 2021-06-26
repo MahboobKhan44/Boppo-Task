@@ -28,9 +28,17 @@ export const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     height: SCREEN_HEIGHT / 2
   },
+  backArrowCon: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  },
   backSvg: {
     marginLeft: 20,
     marginTop: SCREEN_HEIGHT / 14
+  },
+  bookMarks: {
+    marginRight: 20,
+    marginTop: SCREEN_HEIGHT / 13
   },
   dateCon: {
     flexDirection: 'row',
