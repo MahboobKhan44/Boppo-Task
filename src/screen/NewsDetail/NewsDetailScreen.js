@@ -6,7 +6,9 @@ import BackIcon from '../../assets/svg/BackIcon';
 //VectorIcon
 import BookMark from 'react-native-vector-icons/Fontisto'
 //Third Party Liabraries
-import moment from 'moment';
+//import moment from 'moment';
+//Date format
+import dateFormat from 'dateformat';
 //Fonts
 import { BLACK, GRAY_DARK, WHITE } from '../../global/color';
 
@@ -54,13 +56,13 @@ const NewsDetailScreen = ({ route: { params: { item } }, navigation }) => {
           <View style={styles.dateCon}>
 
             <Text style={styles.dateYearFormat}>
-              {moment(item.publishedAt).format('MMMM Do YYYY')}
+              {dateFormat(item.publishedAt, "mmmm dS yyyy")}
             </Text>
 
             <View style={styles.dot} />
 
             <Text style={styles.dateMinFormat}>
-              {moment(item.publishedAt).format('h:mm A')}
+              {dateFormat(item.publishedAt, "h:MM TT")}
             </Text>
 
           </View>
